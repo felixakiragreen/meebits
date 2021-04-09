@@ -1,45 +1,46 @@
 <script lang="ts">
-	import Counter from '$lib/Counter.svelte';
+	import "tailwindcss/tailwind.css"
+
+	import Layout from "./$layout.svelte"
 </script>
 
 <main>
-	<h1>Hello world!</h1>
+	
+	<section>
+		<p>👋 if you are who we think you are</p>
+		<p>then this domain is yours<br /> & we’ll hand it over ($0)</p>
+		<p>we just wanted to say hello 😊</p>
+		<p>💚</p>
+		<a href="https://ambition.wtf">ambition.wtf</a>
+	</section>
 
-	<Counter />
-
-	<p>Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte apps.</p>
 </main>
 
-<style>
+<style lang="postcss">
 	main {
-		text-align: center;
-		padding: 1em;
-		margin: 0 auto;
+		@apply flex justify-center items-center;
+		@apply w-screen h-screen;
+		@apply bg-gray-100 dark:bg-gray-900;
+		@apply text-gray-900 dark:text-gray-100;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4rem;
-		font-weight: 100;
-		line-height: 1.1;
-		margin: 4rem auto;
-		max-width: 14rem;
+	section {
+		@apply text-center;
 	}
 
 	p {
-		max-width: 14rem;
-		margin: 2rem auto;
-		line-height: 1.35;
+		@apply max-w-xs;
+		@apply my-8 mx-auto;
+		@apply leading-snug;
 	}
 
-	@media (min-width: 480px) {
-		h1 {
-			max-width: none;
-		}
-
-		p {
-			max-width: none;
-		}
+	a {
+		@apply text-felix;
+		@apply no-underline;
+		@apply border-b-2 border-felix;
+		@apply py-2;
+		@apply transition-all;
+		@apply hover:px-2 hover:-mx-2 hover:bg-felix hover:text-gray-900;
 	}
+
 </style>
